@@ -3,7 +3,6 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
 .player__1 {
@@ -50,10 +49,12 @@ section {
 }
 
 .option {
+  font-size: 1.25rem;
   border: 0.125rem solid white;
-  background-color: white;
-  position: absolute;
-  left: 39%;
+  background-color: yellow;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   border-radius: 0.25rem;
   width: 8rem;
   display: flex;
@@ -62,14 +63,20 @@ section {
   cursor: pointer;
 }
 
-.roll-dice {
+#game-over {
+  width: 50%;
+  height: 50%;
+  font-size: 5rem;
+  background-color: bisque;
+  color: blueviolet;
   position: absolute;
-  top: 70%;
+  top: 25%;
+  left: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.hold-dice {
-  position: absolute;
-  top: 80%;
-  left: 37.5%;
-  width: 9rem;
+#text__game-over {
+  width: 80%;
 }

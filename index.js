@@ -1,5 +1,5 @@
-const rollDice = document.querySelector(".roll-dice");
-const holdDice = document.querySelector(".hold-dice");
+const rollDice = document.querySelector(".dice-roll");
+const holdDice = document.querySelector(".dice-hold");
 const dice = [1, 2, 3, 4, 5, 6];
 let crrPlayer = 1; // 1 => player1, 2 => player2
 const players = [
@@ -15,24 +15,24 @@ const displayCrrScore = () => {
 
 const displayScore = () => {
   displayCrrScore();
-  const scoreDiv = document.querySelector(`.player__${crrPlayer}__total`);
+  const scoreDiv = document.querySelector(`.player-${crrPlayer}__total`);
   scoreDiv.innerText = players[crrPlayer - 1].score;
 };
 
 const handleClick = (event) => {
-  const initailizeCrrScore = () => {
-    players[crrPlayer - 1].crrScore = 0;
-    displayCrrScore();
-    crrPlayer = crrPlayer == 1 ? 2 : 1;
-    crrPlayerArrow.src =
-      crrPlayer == 1 ? "public/leftArrow.svg" : "public/rightArrow.svg";
-  };
   // rollDice
   const handleRollDice = () => {
+    const initializeCrrScore = () => {
+      players[crrPlayer - 1].crrScore = 0;
+      displayCrrScore();
+      crrPlayer = crrPlayer == 1 ? 2 : 1;
+      crrPlayerArrow.src =
+        crrPlayer == 1 ? "public/leftArrow.svg" : "public/rightArrow.svg";
+    };
     const randomIndex = Math.floor(Math.random() * dice.length);
     const diceNumber = dice[randomIndex];
 
-    if (diceNumber <= 2) initailizeCrrScore();
+    if (diceNumber <= 2) initializeCrrScore();
     else players[crrPlayer - 1].crrScore += diceNumber;
 
     displayCrrScore();
@@ -45,9 +45,9 @@ const handleClick = (event) => {
         holdDice.removeEventListener("click", handleClick);
         const body = document.querySelector("body");
         const gameOverDiv = document.createElement("div");
-        gameOverDiv.id = "game-over";
+        gameOverDiv.id = "gameover";
         const div = document.createElement("div");
-        div.id = "text__game-over";
+        div.id = "text-gameover";
         div.innerText = `winner is player${crrPlayer}`;
         gameOverDiv.appendChild(div);
         body.appendChild(gameOverDiv);
@@ -59,6 +59,8 @@ const handleClick = (event) => {
     players[crrPlayer - 1].crrScore = 0;
     displayScore();
     crrPlayer = crrPlayer == 1 ? 2 : 1;
+    crrPlayerArrow.src =
+      crrPlayer == 1 ? "public/leftArrow.svg" : "public/rightArrow.svg";
   };
 
   const isRollDice = event.srcElement.className.includes("roll");

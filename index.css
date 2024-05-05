@@ -5,11 +5,11 @@ main {
   align-items: center;
 }
 
-.player__1 {
+.player-1 {
   background-color: aqua;
 }
 
-.player__2 {
+.player-2 {
   background-color: aquamarine;
 }
 
@@ -31,7 +31,7 @@ section {
   font-size: 40px;
 }
 
-.box__score {
+.box-score {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,7 +42,7 @@ section {
   background-color: pink;
 }
 
-.box__score h3 {
+.box-score h3 {
   height: 5%;
   margin-top: 0.25rem;
   margin-bottom: 2rem;
@@ -63,7 +63,7 @@ section {
   cursor: pointer;
 }
 
-#game-over {
+#gameover {
   width: 50%;
   height: 50%;
   font-size: 5rem;
@@ -77,6 +77,6 @@ section {
   align-items: center;
 }
 
-#text__game-over {
+#text-gameover {
   width: 80%;
 }
